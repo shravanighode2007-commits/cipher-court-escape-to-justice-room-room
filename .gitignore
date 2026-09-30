@@ -1,0 +1,60 @@
+# =========================================================================
+# Unity Standard .gitignore
+# =========================================================================
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Visual Studio & IDE files
+.vs/
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Unity Crash and Diagnostics
+sysinfo.txt
+*.stackdump
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+[Dd]esktop.ini
+~$*.docx
+~$*.tmp
+
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.env
+venv/
+.venv/
+env/
+
+# Cloudflare & temporary binaries
+cloudflared.exe
+LIVE_URL.txt
+test_compile.log
+build_game.log
+build_webgl.log
+build_polish*.log
+~WRL*.tmp

@@ -1,0 +1,294 @@
+=== PAGE 1 ===
+SOFTWARE REQUIREMENTS SPECIFICATION (SRS)
+Project Title: Cipher Court –  Escape to justice room
+Name: Shravani Laxman Ghode
+Roll No.:9022
+1. Front End
+The front end is the visual and interactive part of the game through which the player 
+experiences the 3D environment and communicates with the system.
+Unity 3D game scenes for the courtroom/escape-room environment.
+3D character/player controller.
+Interactive doors, locks, ﬁles, computers, documents and other objects.
+Main Menu, Gameplay UI, Pause Menu and Completion/Game Over UI.
+Code-entry and puzzle interfaces.
+Clue and hint display.
+Timer and objective indicators.
+Lighting, textures, animations and audio presentation.
+2. Backend
+The backend/game logic manages player actions, puzzle validation, game state and 
+progression. For the Unity implementation, this logic is primarily handled by C# scripts inside 
+the Unity project.
+Player movement and interaction management.
+Puzzle and cipher validation.
+Code and password checking.
+Door/area unlocking logic.
+Clue and hint management.
+Timer and objective management.
+Game-state and progression management.
+Scene loading and transition control.
+Audio and event-trigger management.
+3. Languages
+Language Use Role
+C# Unity scripts Player controls, interactions, 
+puzzles, UI and game logic
+HLSL/Shader code (where 
+required)
+Unity rendering Visual/material effects 
+when custom shaders are 
+
+=== PAGE 2 ===
+HTML/CSS/JavaScript 
+(optional fallback)
+Web-based prototype used
+4. Functional Requirements
+ID Requirement Priority
+FR-01
+The system shall allow the 
+player to start a new game 
+from the main menu.
+High
+FR-02
+The system shall display a 
+3D courtroom/escape-room 
+environment to the player.
+High
+FR-03
+The system shall allow the 
+player to move the character 
+within the game 
+environment.
+High
+FR-04
+The system shall allow the 
+player to interact with doors, 
+ﬁles, documents, 
+computers, locks, clues and 
+other designated objects.
+High
+FR-05
+The system shall provide 
+cipher-based puzzles that 
+the player must solve to 
+progress through the game.
+High
+FR-06
+The system shall provide 
+clues related to the cipher 
+puzzles.
+High
+FR-07
+The system shall allow the 
+player to enter answers or 
+codes using an interactive 
+interface.
+High
+FR-08
+The system shall validate 
+the code entered by the 
+player and indicate whether 
+it is correct or incorrect.
+High
+FR-09 The system shall unlock the High
+
+=== PAGE 3 ===
+FR-10 corresponding door, locker 
+or game area when the 
+correct code is entered.
+High
+FR-11
+The system shall maintain 
+the current game progress 
+during gameplay.
+High
+FR-12
+The system shall provide a 
+timer to track the player's 
+progress.
+Medium
+FR-13
+The system shall provide 
+hints when the player 
+requests assistance.
+Medium
+FR-14
+The system shall display 
+appropriate messages for 
+successful and 
+unsuccessful interactions.
+Medium
+FR-15
+The system shall provide a 
+pause menu containing 
+Resume, Restart and Exit 
+options.
+Medium
+FR-16
+The system shall display a 
+completion message when 
+the player successfully 
+solves all required puzzles.
+High
+FR-17
+The system shall allow the 
+player to restart the game. Medium
+FR-18
+The system shall provide 
+sound effects and 
+background audio for 
+important game events.
+Low
+FR-19
+The system shall detect 
+completion of required 
+objectives and trigger the 
+ﬁnal game sequence.
+High
+FR-20
+The system shall provide an 
+exit option to leave the 
+game.
+Low
+
+=== PAGE 4 ===
+5. Non-Functional Requirements
+ID Requirement Priority
+NFR-01
+The game should provide 
+smooth and acceptable 
+response time during 
+normal gameplay and player 
+interactions.
+High
+NFR-02
+The system should provide 
+a simple, clear and user-
+friendly game interface.
+High
+NFR-03
+The system shall restrict 
+access to game-
+development and 
+conﬁguration features to 
+authorized developers.
+High
+NFR-04
+The system shall maintain 
+consistency of game states, 
+puzzle states and player 
+progress during gameplay.
+High
+NFR-05
+The game should be 
+modular and maintainable 
+so that new puzzles, rooms, 
+clues and features can be 
+added easily.
+High
+NFR-06
+The system should provide 
+stable gameplay without 
+frequent crashes or 
+unexpected termination.
+High
+NFR-07
+The 3D environment should 
+load within an acceptable 
+time on the target computer.
+Medium
+NFR-08
+Player controls should 
+respond accurately to 
+keyboard and mouse input.
+High
+NFR-09
+Puzzle validation should 
+provide immediate feedback High
+
+=== PAGE 5 ===
+NFR-10 after the player submits an 
+answer.
+Medium
+NFR-12
+The game should maintain 
+consistent behaviour on 
+supported Windows 
+systems.
+High
+NFR-13
+The system should allow 
+game assets, scripts, 
+scenes and UI components 
+to be updated independently 
+where practical.
+Medium
+NFR-14
+The system should 
+minimize unnecessary 
+memory and processing 
+usage during gameplay.
+Medium
+NFR-15
+The system should provide 
+appropriate error messages 
+when invalid codes or 
+unsupported interactions 
+are attempted.
+Medium
+6. Integrated Development Requirements
+Integrated Development Requirements describe the tools and development environment 
+needed to build, test and maintain Cipher Court.
+ID Requirement Priority
+IDR-01
+The project shall be 
+developed using Unity Hub 
+and a supported Unity 3D 
+Editor version selected for 
+the project.
+High
+IDR-02
+C# shall be used for Unity 
+gameplay and system 
+scripts.
+High
+IDR-03
+A suitable code editor such 
+as Visual Studio or Visual 
+Studio Code shall be used 
+for C# development.
+Medium
+
+=== PAGE 6 ===
+IDR-04 The project shall be 
+organized into separate 
+folders for Scenes, Scripts, 
+Prefabs, Materials, Models, 
+UI and Audio.
+High
+IDR-07
+Game assets shall be 
+integrated into the Unity 
+project and tested for 
+compatibility and 
+performance.
+Medium
+IDR-08
+The project shall be tested 
+for player movement, 
+interaction, puzzle 
+validation, scene transitions 
+and completion conditions.
+High
+IDR-09
+Development shall use 
+versioned project backups 
+or version control where 
+available to reduce the risk 
+of losing source ﬁles.
+Medium
+IDR-10
+The ﬁnal build shall be 
+tested on the target 
+Windows computer before 
+project submission.
+High
+

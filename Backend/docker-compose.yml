@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # Option A: Standalone SQLite Backend Service (Default - zero setup)
+  backend-sqlite:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python server.py
+    container_name: cipher_court_backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./cipher_court.db:/app/cipher_court.db
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+
+  # Option B: Enterprise PostgreSQL + FastAPI Stack (Optional)
+  # Uncomment the blocks below if deploying with PostgreSQL
+  #
+  # postgres-db:
+  #   image: postgres:15-alpine
+  #   container_name: cipher_court_postgres
+  #   restart: unless-stopped
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: secretpassword
+  #     POSTGRES_DB: cipher_court
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+  #
+  # backend-fastapi:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   command: uvicorn main:app --host 0.0.0.0 --port 8000
+  #   container_name: cipher_court_fastapi
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - postgres-db
+  #   ports:
+  #     - "8000:8000"
+  #   environment:
+  #     - DATABASE_URL=postgresql://postgres:secretpassword@postgres-db:5432/cipher_court
+
+# volumes:
+#   pgdata:
