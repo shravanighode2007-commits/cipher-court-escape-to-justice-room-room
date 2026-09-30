@@ -18,13 +18,12 @@ echo         PUSH CIPHER COURT REPOSITORY TO GITHUB
 echo ==============================================================
 echo Current Branch: main
 echo.
-set /p "REPO_URL=Enter your GitHub Repo URL (e.g. https://github.com/YOUR_USERNAME/cipher-court.git): "
-
-if "!REPO_URL!"=="" (
-    echo [ERROR] No repository URL was entered.
-    pause
-    exit /b 1
-)
+set "DEFAULT_REPO=https://github.com/shravanighode2007-commits/cipher-court-escape-to-justice-room-room.git"
+echo Target Repository:
+echo   !DEFAULT_REPO!
+echo.
+set /p "REPO_URL=Press ENTER to push to this repository (or enter a new URL): "
+if "!REPO_URL!"=="" set "REPO_URL=!DEFAULT_REPO!"
 
 echo.
 echo [*] Setting remote origin to !REPO_URL!...
@@ -32,16 +31,23 @@ echo [*] Setting remote origin to !REPO_URL!...
 "!GIT_EXE!" remote add origin "!REPO_URL!"
 "!GIT_EXE!" branch -M main
 
+echo.
 echo [*] Pushing main branch to GitHub...
+echo (If prompted, log into GitHub in the browser window or enter your Personal Access Token)
+echo.
 "!GIT_EXE!" push -u origin main
 
 if errorlevel 1 (
     echo.
-    echo [!] Push encountered an issue. Ensure:
-    echo     1. The GitHub repository is created.
-    echo     2. You have permission / are logged into GitHub.
+    echo [!] Push encountered an authentication or network notice.
+    echo     If GitHub asked for a password, note that GitHub requires a Personal Access Token (PAT).
+    echo     You can generate one with 'repo' scope at: https://github.com/settings/tokens
 ) else (
     echo.
-    echo [SUCCESS] Repository pushed to GitHub!
+    echo ==============================================================
+    echo [SUCCESS] CIPHER COURT IS NOW LIVE ON GITHUB!
+    echo Repository: !REPO_URL!
+    echo ==============================================================
 )
+echo.
 pause
