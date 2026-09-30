@@ -6,7 +6,9 @@ cd /d "%~dp0"
 set "GIT_EXE=git"
 where git >nul 2>nul
 if errorlevel 1 (
-    if exist "C:\Users\Laxman\AppData\Local\github-copilot-git-2.53.0-4\cmd\git.exe" (
+    if exist "C:\Users\Laxman\AppData\Local\Programs\MinGit\cmd\git.exe" (
+        set "GIT_EXE=C:\Users\Laxman\AppData\Local\Programs\MinGit\cmd\git.exe"
+    ) else if exist "C:\Users\Laxman\AppData\Local\github-copilot-git-2.53.0-4\cmd\git.exe" (
         set "GIT_EXE=C:\Users\Laxman\AppData\Local\github-copilot-git-2.53.0-4\cmd\git.exe"
     )
 )
